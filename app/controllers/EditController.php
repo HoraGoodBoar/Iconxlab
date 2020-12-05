@@ -1,14 +1,19 @@
 <?php
 
 include_once(ROOT.'/app/classes/Controller.php');
+include_once(ROOT.'/app/models/EditModel.php');
 
 class EditController extends Controller
 {
     // Повертаю дані одного студента
     public function getUserAction($_value)
     {
-        echo 'Get - '.$_value.'<br>';
+        $data = array();
+        $data = EditModel::getStudentsById($_value);
 
+        echo 'Get - '.$_value.'<br>';
+        print_r($data);
+        
         return true;
     }   
 
