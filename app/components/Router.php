@@ -26,15 +26,24 @@ class Router
 
         $uri = self::GetURI();
 
-        // Цикл який перевіряє чи uri який нам прийшов є у наших роутах і дізнаємось ім*я контролера та подію яку маємо виконати
+        // Цикл який перевіряє чи uri який нам прийшов є у наших роутах і дізнаємось ім*я контролера та подію яку маємо виконати та виконуємо
         foreach ($this->routes as $uriPath => $path) {
             if( preg_match("~$uriPath~", $uri) ) 
             {
-                $nameController =  explode('/', $path)[0];
-                $nameAction = explode('/', $path)[1];
-
-                echo 'Controler : '.$nameController.'<br>';
-                echo 'Action : '.$nameAction;
+                $nameController = ucfirst( explode('/', $path)[0] ).'Controller';
+                $nameAction = explode('/', $path)[1].'Action';
+                
+                if ( file_exists(ROOT.'/app/controllers/'.$nameController.'.php') )
+                {
+                    include_once( ROOT.'/app/controllers/'.$nameController.'.php' );
+                }
+                
+                $controller = new $nameController;
+                $result = $controller->mainAction();
+                if($result != null)
+                {
+                    break;
+                }
             }
         }
     }

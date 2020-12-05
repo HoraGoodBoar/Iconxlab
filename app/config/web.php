@@ -5,7 +5,7 @@
 * students/index - ім*я контролера/ім*я події 
 */
 return array(
-    'students' => 'students/index',
-    'edit' => 'edit/index',
-    'registration' => 'registration/index'
+    'students' => 'students/main',
+    'edit' => 'edit/main',
+    'registration' => 'registration/main'
 );
