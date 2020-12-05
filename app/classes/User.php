@@ -4,6 +4,6 @@ class User
 {
     public $id;
     public $FirstName;
-    public $LasteName;
+    public $LastName;
     public $Age;
 }

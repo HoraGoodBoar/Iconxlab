@@ -11,7 +11,7 @@ class RegistrationModel extends Model
     {
         $query ="INSERT INTO users VALUES(
             NULL, 
-            '$_student->FirtsName',
+            '$_student->FirstName',
             '$_student->LastName',
             $_student->Kind,
             $_student->Age,

@@ -14,9 +14,6 @@ class EditModel extends Model
 
         $row = mysqli_fetch_row($result);
 
-        print_r($row);
-        echo '<br>';
-
         $student = new Student();
         $student->id           = $row[0];
         $student->FirstName    = $row[1];
@@ -34,6 +31,7 @@ class EditModel extends Model
     {
         $db = new DB();
         $result = $db->sendQuery('DELETE FROM users WHERE id ='.$_id); // Надсилаємо запит
+
 
         return true;
     }

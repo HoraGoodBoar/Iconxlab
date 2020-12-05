@@ -2,16 +2,14 @@
 
 include_once(ROOT.'/app/classes/Controller.php');
 include_once(ROOT.'/app/models/StudentsModel.php');
+include_once(ROOT.'/app/classes/Student.php');
 
 class StudentsController extends Controller
 {
     public function mainAction()
     {
-        $data = array();
-        $data = StudentsModel:: getStudents();
+        $data = StudentsModel::getStudents();
 
-        print_r($data);
-
-        echo 'Students';
+        require_once(ROOT.'/app/views/studentsView.php');
     }
 }
