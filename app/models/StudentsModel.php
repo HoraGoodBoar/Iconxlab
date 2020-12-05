@@ -27,7 +27,7 @@ class StudentsModel extends Model
             $students[$i]->LastName     = $row[2];
             $students[$i]->Kind         = $row[3];
             $students[$i]->Age          = $row[4];
-            $students[$i]->Group        = $row[5];
+            $students[$i]->GroupF        = $row[5];
             $students[$i]->Faculty      = $row[6];
         }
         return $students;

@@ -2,33 +2,44 @@
 
 include_once(ROOT.'/app/classes/Controller.php');
 include_once(ROOT.'/app/models/EditModel.php');
+include_once(ROOT.'/app/classes/Student.php');
 
 class EditController extends Controller
 {
     // Повертаю дані одного студента
     public function getUserAction($_value)
     {
-        $data = array();
         $data = EditModel::getStudentsById($_value);
-
-        echo 'Get - '.$_value.'<br>';
-        print_r($data);
-        
         return true;
     }   
 
     // Видаляю студента
     public function deleteUserAction($_value)
     {
-        echo 'Delete - '.$_value.'<br>';
+        EditModel::deleteById($_value);
 
         return true;
     }   
 
-    // Обновлюю дані студента
-    public function updateUserAction($_value)
+    // Обновлення даних студента
+    public function updateUserData ()
     {
-        echo 'Update - '.$_value.'<br>';
+        $_value = new Student();
+        
+        $_value->id=$_POST['update_id'];
+        $_value->FirstName = $_POST['update_FirstName'];
+        $_value->LastName = $_POST['update_LastName'];    
+        $_value->Kind = $_POST['update_Kind'];
+        $_value->GroupF = $_POST['update_GroupF'];
+        $_value->Faculty = $_POST['update_Faculty'];
+        $_value->Age = $_POST['update_Age'];
+
+        EditModel::updateById($_value);
+    }    
+    
+    // Відправлення сторінки редагування даних студента
+    public function updateUserAction()
+    {
 
         return true;
     } 
