@@ -10,7 +10,9 @@ error_reporting(E_ALL);
 // Підключаємо файли
 define('ROOT', dirname(__FILE__)); // Створюємо константу яка буде зберігати шлях директорії
 require_once(ROOT.'/app/components/Router.php');
+require_once(ROOT.'/app/components/DB.php');
 
 // Запускаємо роутер
 $router = new Router();
 $router->run();
+

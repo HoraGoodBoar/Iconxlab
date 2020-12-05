@@ -9,7 +9,7 @@ class StudentsController extends Controller
     public function mainAction()
     {
         $data = StudentsModel::getStudents();
-
+        
         require_once(ROOT.'/app/views/studentsView.php');
     }
 }

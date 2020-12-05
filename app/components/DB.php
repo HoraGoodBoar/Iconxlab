@@ -7,7 +7,18 @@ class DB
     public function __construct()
     {
         $this->params =  include(ROOT.'/app/config/db.php');
-        
+
+        // Перевіряє чи є створена таблиця, якщо нема створює саме + заповнює даними, щоб ви не вводили довго)
+        $query = self::sendQuery("SELECT * FROM users");
+        if(!$query)
+        {
+            $query =( include(ROOT.'/app/config/CreatedTabelAndFullData.php') )[0];
+            self::sendQuery( $query );
+
+            $query = (include(ROOT.'/app/config/CreatedTabelAndFullData.php'))[1];
+            self::sendQuery( $query );
+        }
+        //
     }
 
     // Повертає підключення до бази

@@ -15,7 +15,7 @@
                 <div class="col-md-3 col-sm-2 "></div>  
                 <div class="col-md-6 col-sm-8 col-12 border rounded mt-3 text-center" style="background:#e6e8eb;" >
                    
-                <form method="post" action="/Iconxlab/registration/add" class="form">
+                     <form method="post" action="/Iconxlab/registration/add" class="form">
                         <h2 class="m-3"> Register</h2>
                         <div class="form-group">
                             <div class="row">

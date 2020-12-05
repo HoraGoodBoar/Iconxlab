@@ -9,6 +9,7 @@ class StudentsModel extends Model
     // Створюю запит до БД на список усіх студентів і повертаю дані контролеру назад
     public static function getStudents()
     {
+        
         // Підключаємось до бази
         $db = new DB();
         $result = $db->sendQuery('SELECT * FROM users'); // Надсилаємо запит

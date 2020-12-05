@@ -25,7 +25,7 @@ class EditModel extends Model
 
         return $student;
     }
-
+    
     // Виделення по ід
     public static function deleteById($_id)
     {
