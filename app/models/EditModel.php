@@ -6,11 +6,11 @@ include_once(ROOT.'/app/components/DB.php');
 
 class EditModel extends Model
 {
-    // Повернення даних одного студента
+    // Get data one student
     public static function getStudentsById($_id)
     {
         $db = new DB();
-        $result = $db->sendQuery('SELECT * FROM users WHERE id='.$_id); // Надсилаємо запит
+        $result = $db->sendQuery('SELECT * FROM users WHERE id='.$_id); 
 
         $row = mysqli_fetch_row($result);
 
@@ -26,17 +26,17 @@ class EditModel extends Model
         return $student;
     }
     
-    // Виделення по ід
+    // Delete by id
     public static function deleteById($_id)
     {
         $db = new DB();
-        $result = $db->sendQuery('DELETE FROM users WHERE id ='.$_id); // Надсилаємо запит
+        $result = $db->sendQuery('DELETE FROM users WHERE id ='.$_id);
 
 
         return true;
     }
 
-    // Обновлення даних по ід
+    // Update data by id
     public static function updateById($_data)
     {
         $query =" UPDATE users SET 
@@ -49,7 +49,7 @@ class EditModel extends Model
             WHERE id=$_data->id ";
 
         $db = new DB();
-        $result = $db->sendQuery($query); // Надсилаємо запит
+        $result = $db->sendQuery($query); 
 
         return true;
     }

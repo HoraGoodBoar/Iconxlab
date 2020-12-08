@@ -6,7 +6,7 @@ include_once(ROOT.'/app/classes/Student.php');
 
 class EditController extends Controller
 {
-       // Обновлення даних студента
+       // Update info students
      public function updateUserAction()
      {
         $_value = new Student();
@@ -24,7 +24,7 @@ class EditController extends Controller
         require_once(ROOT.'/app/views/messagesView.php'); 
      } 
 
-    // Повертаю дані одного студента
+    // Get data one students
     public function getUserAction($_value)
     {
         $data = EditModel::getStudentsById($_value);
@@ -34,7 +34,7 @@ class EditController extends Controller
         return true;
     }   
 
-    // Видаляю студента
+    // Delete student
     public function deleteUserAction($_value)
     {
         EditModel::deleteById($_value);

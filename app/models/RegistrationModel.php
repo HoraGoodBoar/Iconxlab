@@ -6,7 +6,7 @@ include_once(ROOT.'/app/components/DB.php');
 
 class RegistrationModel extends Model
 {
-    // Додаємо студента в базу
+    // Add student to DB
     public static function AddStudent($_student)
     {
         $query ="INSERT INTO users VALUES(
@@ -19,7 +19,7 @@ class RegistrationModel extends Model
             '$_student->Faculty'
             )";
         $db = new DB();
-        $result = $db->sendQuery($query); // Надсилаємо запит
+        $result = $db->sendQuery($query);
 
         return true;
     }

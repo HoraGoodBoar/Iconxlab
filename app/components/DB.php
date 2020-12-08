@@ -2,13 +2,13 @@
 
 class DB
 {
-    // Буде зберігати всі параметри підключення
+    // Save all parameters for connection
     private $params = array(); 
     public function __construct()
     {
         $this->params =  include(ROOT.'/app/config/db.php');
 
-        // Перевіряє чи є створена таблиця, якщо нема створює саме + заповнює даними, щоб ви не вводили довго)
+        // Creates a table if it does not exist
         $query = self::sendQuery("SELECT * FROM users");
         if(!$query)
         {
@@ -21,7 +21,7 @@ class DB
         //
     }
 
-    // Повертає підключення до бази
+    // Returns the connection to the database
     private function getConnection()
     {
         $link = mysqli_init();
@@ -36,7 +36,7 @@ class DB
         return $link;
     }
 
-    // Надсилає запит у базу та повертає дані
+    // Sends a request to the database and returns the data
     public function sendQuery($_query)
     {
         return mysqli_query(self::getConnection(), $_query);

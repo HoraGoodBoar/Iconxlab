@@ -6,17 +6,15 @@ include_once(ROOT.'/app/components/DB.php');
 
 class StudentsModel extends Model
 {
-    // Створюю запит до БД на список усіх студентів і повертаю дані контролеру назад
+    // I create a query to the database on the list of all students and return the data to the controller
     public static function getStudents()
     {
         
-        // Підключаємось до бази
         $db = new DB();
-        $result = $db->sendQuery('SELECT * FROM users'); // Надсилаємо запит
+        $result = $db->sendQuery('SELECT * FROM users'); 
 
-        $rows = mysqli_num_rows($result); // Дізнаємось скільки рядків даних нам повернуло
+        $rows = mysqli_num_rows($result); 
 
-        // Зберігаємо дані у масив та поветраємо їх
         $students = array();
         for ($i = 0 ; $i < $rows ; ++$i)
         {

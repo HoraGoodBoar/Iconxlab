@@ -5,14 +5,14 @@ include_once(ROOT.'/app/models/RegistrationModel.php');
 
 class RegistrationController extends Controller
 {
-    // Вертає сторінку реєстрації
+    // Get page registration
     public function mainAction()
     {
         require_once(ROOT.'/app/views/registrationView.php');
         return true;
     }
 
-    // Додає студента
+    // Add strudent
     public function addAction()
     {
         $_value = new Student();

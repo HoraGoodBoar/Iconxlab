@@ -1,8 +1,7 @@
 <?php
 
-/* наші роути
-* students - наш uri
-* students/main- ім*я контролера/ім*я події 
+/* routes
+* students/main- name controller/name action 
 */ 
 return array(
     'edit/delete/([0-9]+)' => 'edit/deleteUser/$1',
